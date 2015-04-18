@@ -16,7 +16,6 @@ $nodes = array_merge($switches, $networks);
 $routing = $restcont->getRoutingTables();
 $reqrouters = $restcont->getRequestRouters();
 $cdnrouting = $restcont->getCDNRouting();
-print_r($cdnrouting);
 ?>
 <div width="100%">
     <h1>Network topology</h1>

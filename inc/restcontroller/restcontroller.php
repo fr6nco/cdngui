@@ -110,7 +110,8 @@ class restController {
                 $toarray[$edge['to']] = 1;
             }
         }
-
+        
+        //make 2 ip networks to labels...point to point links between switches.
         foreach ($toarray as $ip => $num) {
             if ($num == 2) {
                 $joinarr = array();
@@ -218,5 +219,10 @@ class restController {
             }
             return $sessions;
         }
+    }
+    
+    function ipmatch($ip, $subnet) {
+        $nwdata = split('/' , $subnet);
+        return $this->cidr->cidr_match($ip, $nwdata[0], $nwdata[1]);
     }
 }
