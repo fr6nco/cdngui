@@ -10,12 +10,14 @@ and open the template in the editor.
         <title>CDN GUI v0.1</title>
         <script type="text/javascript" src="inc/visjs/vis.js"></script>
         <script type="text/javascript" src="inc/jquery/jquery-1.11.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="inc/style.css">
     </head>
     <body>
-        <div>
+        <h1 class="title">CDN GUI v 1.0</h1>
+<!--        <div>
             <h3>GET DEBUG:</h3>
                 <?php print_r($_GET); ?>
-        </div>
+        </div>-->
     <?php
         //Load config
         include_once 'config.php';
@@ -48,11 +50,11 @@ and open the template in the editor.
                         include 'sessions.php';
                         break;
                     default:
-                        echo "Default page in default";
+                        include 'about.php';
                         break;
                 }
             } else {
-                echo "Default page in else";
+                include 'about.php';
             }
         //end content
         ?>   

@@ -8,11 +8,12 @@
  * Define menu options here with variable do
  */
 ?>
-<div>
+<div class="nav">
     <ul>
         <li><a href="?do=routes">Routes</a></li>
         <li><a href="?do=topology">Network topology</a></li>
         <li><a href="?do=requestrouters">Request Routers</a></li>
         <li><a href="?do=serviceengines">Service Engines</a></li>
+        <li><a href="index.php">About</a></li>
     </ul>
 </div>

@@ -25,46 +25,51 @@ if (isset($_GET['delete'])) {
 
 if (isset($_GET['add'])) {
     //TODO validate
-    $sql = "INSERT INTO request_router (ip_address) VALUES (INET_ATON('". $_GET['ipaddress'] ."'))";
-    
-    if(mysql_query($sql) === TRUE) {
+    $sql = "INSERT INTO request_router (ip_address) VALUES (INET_ATON('" . $_GET['ipaddress'] . "'))";
+
+    if (mysql_query($sql) === TRUE) {
         echo "Request router added successfully";
     } else {
         echo "Error adding request router " . mysql_error();
     }
 }
 
-$routers = mysql_query("SELECT request_router_id as id, INET_NTOA(ip_address) as ip FROM request_router") 
+$routers = mysql_query("SELECT request_router_id as id, INET_NTOA(ip_address) as ip FROM request_router")
         or die('mysql error' . mysql_error());
 ?>
 <div>
-    <form action="index.php" method="get">
-        <table border="1px solid">
-            <th>ID</th>
-            <th>IP address</th>
-            <th></th>
+    <div class="tableclass">
+        <form action="index.php" method="get">
 
-            <?php
-            while ($row = mysql_fetch_array($routers)) {
-                ?>
+            <table>
                 <tr>
-                    <td>
-                        <?php echo $row['id']; ?>
-                    </td>
-                    <td>
-                        <?php echo $row['ip']; ?>
-                    </td>
-                    <td>
-                        <input type="hidden" name="do" value="requestrouters" />
-                        <button type="submit" name="delete" value="<?php echo $row['id']; ?>">Delete</button>
-                    </td>
+                    <td>ID</td>
+                    <td>IP address</td>
+                    <td></td>
                 </tr>
+
                 <?php
-            }
-            
-            ?>
-        </table>
-    </form>
+                while ($row = mysql_fetch_array($routers)) {
+                    ?>
+                    <tr>
+                        <td>
+                            <?php echo $row['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['ip']; ?>
+                        </td>
+                        <td>
+                            <input type="hidden" name="do" value="requestrouters" />
+                            <button type="submit" name="delete" value="<?php echo $row['id']; ?>">Delete</button>
+                        </td>
+                    </tr>
+                    <?php
+                }
+                ?>
+            </table>
+
+        </form>
+    </div>
     <br>
     <div>
         <h2>Add new Request Router:</h2>
