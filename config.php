@@ -14,4 +14,4 @@ $_DATABASE = "cdnapp";
 
 $_SITEROOT = "/cdngui";
 
-$_CONTROLLERURI = "http://192.168.111.100:8080";
+$_CONTROLLERURI = "http://192.168.111.2:8080";
