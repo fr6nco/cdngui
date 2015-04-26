@@ -87,13 +87,13 @@ if (isset($_GET['state']) && $_GET['state'] == 6) {
     echo "<h2>Session description:</h2>";
     echo "<ul>";
     echo "<li>User requested in his browser address " . $_GET['host'] . "</li>";
-    echo "<li>" . $_GET['host'] . " is located at ip address " . $_GET['request_router_ip'] . " which is the Request Router defined in the CDN engine</li>";
+    echo "<li>" . $_GET['host'] . " is located at IP address " . $_GET['request_router_ip'] . " which is the Request Router defined in the CDN engine</li>";
     echo "<li>The user agent sends a TCP SYN packet to the request router.</li>";
     echo "<li>The packet is captured on the forwarder " . $_GET['switchid'] . " and is sent to the controller</li>";
     echo "<li>The controller creates a new session and sends a TCP SYN ACK packet back to the client</li>";
     echo "<li>The client sends an ACK packet, so the TCP session is now established with the forwarder</li>";
     echo "<li>In the next step the User Agent sent his HTTP GET request which was " . $_GET['request_uri'] . "</li>";
-    echo "<li>The controller according to the CDN routing determined, that the content should be served usind the service engine with IP " . $_GET['service_engine_ip'] . "</li>";
+    echo "<li>The controller according to the CDN routing determined, that the content should be served using the service engine with IP " . $_GET['service_engine_ip'] . "</li>";
     echo "<li>From the forwarder " . $_GET['switchid'] . " a TCP connection is established with the Service Engine</li>";
     echo "<li>When the TCP session is established the two TCP sessions are synchronized and joined using ACK, SEQ number and IP address modification flows on the " . $_GET['switchid'] . "</li>";
     echo "<li>The content is served to the client from the Service Engine</li>";
