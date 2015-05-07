@@ -65,7 +65,7 @@ if (isset($_GET['request_router_ip']) && isset($_GET['switchid'])) {
                 <td><?php echo $ses['source_ip']; ?></td>
                 <td><?php echo $ses['source_port']; ?></td>
                 <td><?php echo $ses['host']; ?></td>
-                <td><?php if ($ses['state'] == 6) {
+                <td><?php if ($ses['state'] == 9) {
                 echo "Joined";
             } else {
                 echo "Failed";
@@ -82,7 +82,7 @@ if (isset($_GET['request_router_ip']) && isset($_GET['switchid'])) {
     </table>
 </div>
 <?php
-if (isset($_GET['state']) && $_GET['state'] == 6) {
+if (isset($_GET['state']) && $_GET['state'] == 9) {
     echo "<div>";
     echo "<h2>Session description:</h2>";
     echo "<ul>";
